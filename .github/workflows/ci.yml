@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Run unit tests
+        # Tests use fake sockets and no GUI, so they run headless in CI
+        # with no display server or network access required.
+        run: python -m unittest discover -s tests -v
+
+      - name: Smoke-test the server over real sockets
+        run: python -m tests.smoke_test
+
+      - name: Resilience tests (reconnection, seat expiry, room reaping)
+        # Timing-dependent, so it uses real sleeps -- roughly 30s.
+        run: python -m tests.test_resilience

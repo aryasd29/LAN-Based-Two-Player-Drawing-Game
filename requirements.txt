@@ -1,0 +1,11 @@
+# No external dependencies.
+#
+# This project intentionally uses only the Python standard library:
+#   socket, threading, queue, json, tkinter, dataclasses, argparse,
+#   statistics, uuid, random, itertools
+#
+# This file exists so the absence of dependencies is a documented
+# decision rather than an oversight, and so that
+# `pip install -r requirements.txt` succeeds during setup.
+#
+# Requires Python 3.10+ (uses PEP 604 `X | None` type hints).

@@ -1,0 +1,59 @@
+[
+  {
+    "rooms": 1,
+    "players": 2,
+    "duration_s": 4.52,
+    "strokes_sent": 120,
+    "stroke_deliveries": 120,
+    "deliveries_per_second": 26.6,
+    "latency_ms": {
+      "p50": 0.11,
+      "p95": 0.16,
+      "p99": 0.24,
+      "max": 1.2,
+      "mean": 0.13,
+      "samples": 120
+    },
+    "errors": [],
+    "error_count": 0,
+    "sps": 30
+  },
+  {
+    "rooms": 4,
+    "players": 32,
+    "duration_s": 4.52,
+    "strokes_sent": 479,
+    "stroke_deliveries": 3353,
+    "deliveries_per_second": 741.4,
+    "latency_ms": {
+      "p50": 0.15,
+      "p95": 0.26,
+      "p99": 0.32,
+      "max": 0.59,
+      "mean": 0.16,
+      "samples": 3353
+    },
+    "errors": [],
+    "error_count": 0,
+    "sps": 30
+  },
+  {
+    "rooms": 8,
+    "players": 64,
+    "duration_s": 4.52,
+    "strokes_sent": 1908,
+    "stroke_deliveries": 13356,
+    "deliveries_per_second": 2956.8,
+    "latency_ms": {
+      "p50": 0.13,
+      "p95": 0.26,
+      "p99": 0.35,
+      "max": 5.06,
+      "mean": 0.15,
+      "samples": 13356
+    },
+    "errors": [],
+    "error_count": 0,
+    "sps": 60
+  }
+]
